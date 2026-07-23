@@ -58,10 +58,13 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(42,38,33,0.06);
-    transition: box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease, transform 0.35s ease;
   }
   nav.scrolled{
     box-shadow: 0 6px 20px -12px rgba(42,38,33,0.25);
+  }
+  nav.nav-hidden{
+    transform: translateY(-100%);
   }
   .logo{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; flex-shrink: 0; }
   .logo em{ font-style: italic; }
@@ -403,11 +406,19 @@
 
 <script>
   const nav = document.querySelector('nav');
-  const toggleNavShadow = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 8);
+  let lastY = window.scrollY;
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 8);
+    if (y > lastY) {
+      nav.classList.remove('nav-hidden'); // scrolling down -> show
+    } else if (y < lastY) {
+      nav.classList.add('nav-hidden'); // scrolling up -> hide
+    }
+    lastY = y;
   };
-  toggleNavShadow();
-  window.addEventListener('scroll', toggleNavShadow, { passive: true });
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 </script>
 </body>
 </html>
