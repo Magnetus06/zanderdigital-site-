@@ -53,19 +53,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 26px 6%;
+    padding: 20px 6%;
+    background: var(--bg);
+    transition: box-shadow 0.25s ease, padding 0.25s ease;
   }
-  .logo{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; }
+  nav.scrolled{
+    box-shadow: 0 6px 20px -12px rgba(42,38,33,0.25);
+  }
+  .logo{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; flex-shrink: 0; }
   .logo em{ font-style: italic; }
-  .nav-links{ display:flex; gap: 10px; }
+  .nav-links{ display:flex; gap: 6px; }
   .nav-links a{
     font-size: 0.88rem;
     font-weight: 500;
     padding: 9px 18px;
     border-radius: 999px;
+    white-space: nowrap;
     transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background 0.25s ease;
   }
   .nav-links a:hover{ background: var(--card); transform: translateY(-2px) rotate(-1deg); }
+
+  @media (max-width: 480px){
+    nav{ padding: 16px 5%; }
+    .logo{ font-size: 1rem; }
+    .nav-links{ gap: 2px; }
+    .nav-links a{ font-size: 0.78rem; padding: 7px 12px; }
+  }
 
   /* HERO */
   .hero{
@@ -385,5 +398,13 @@
   <div>DACH · LATAM · EN</div>
 </footer>
 
+<script>
+  const nav = document.querySelector('nav');
+  const toggleNavShadow = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  toggleNavShadow();
+  window.addEventListener('scroll', toggleNavShadow, { passive: true });
+</script>
 </body>
 </html>
