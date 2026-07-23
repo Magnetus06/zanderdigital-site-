@@ -58,13 +58,14 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(42,38,33,0.06);
-    transition: box-shadow 0.25s ease, transform 0.35s ease;
+    transition: box-shadow 0.25s ease, opacity 0.4s ease;
   }
   nav.scrolled{
     box-shadow: 0 6px 20px -12px rgba(42,38,33,0.25);
   }
   nav.nav-hidden{
-    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
   }
   .logo{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; flex-shrink: 0; }
   .logo em{ font-style: italic; }
@@ -411,9 +412,9 @@
     const y = window.scrollY;
     nav.classList.toggle('scrolled', y > 8);
     if (y > lastY) {
-      nav.classList.remove('nav-hidden'); // scrolling down -> show
+      nav.classList.add('nav-hidden'); // scrolling down -> fade away
     } else if (y < lastY) {
-      nav.classList.add('nav-hidden'); // scrolling up -> hide
+      nav.classList.remove('nav-hidden'); // scrolling up -> fade in
     }
     lastY = y;
   };
