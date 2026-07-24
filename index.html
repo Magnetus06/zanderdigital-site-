@@ -408,15 +408,14 @@
 
 <script>
   const nav = document.querySelector('nav');
-  let idleTimer = null;
   const onScroll = () => {
     const y = window.scrollY;
     nav.classList.toggle('scrolled', y > 8);
-    nav.classList.add('nav-hidden'); // any scroll movement -> fade away
-    clearTimeout(idleTimer);
-    idleTimer = setTimeout(() => {
-      nav.classList.remove('nav-hidden'); // scrolling stopped -> fade back in
-    }, 400);
+    if (y <= 0) {
+      nav.classList.remove('nav-hidden'); // fully at top -> show
+    } else {
+      nav.classList.add('nav-hidden'); // scrolled down at all -> hide
+    }
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
