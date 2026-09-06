@@ -6,7 +6,7 @@
 <title>Zander Digital — Motion Design for Product Brands</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
-
+ 
   :root{
     --bg: #FBF6EC;
     --card: #FFFFFF;
@@ -16,27 +16,27 @@
     --accent-soft: #FFE3D6;
     --accent-2: #3C8C82;
   }
-
+ 
   *{ margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior: smooth; }
-
+ 
   body{
     background: var(--bg);
     color: var(--ink);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
-
+ 
   ::selection{ background: var(--accent-soft); color: var(--ink); }
   a{ color: inherit; text-decoration: none; }
-
+ 
   .eyebrow{
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--accent);
   }
-
+ 
   h1,h2,h3{
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -44,7 +44,7 @@
     line-height: 1.05;
   }
   em{ font-style: italic; color: var(--accent); font-weight: 500; }
-
+ 
   /* NAV */
   nav{
     position: fixed;
@@ -79,14 +79,14 @@
     transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background 0.25s ease;
   }
   .nav-links a:hover{ background: var(--card); transform: translateY(-2px) rotate(-1deg); }
-
+ 
   @media (max-width: 480px){
     nav{ padding: 16px 5%; }
     .logo{ font-size: 1rem; }
     .nav-links{ gap: 2px; }
     .nav-links a{ font-size: 0.78rem; padding: 7px 12px; }
   }
-
+ 
   /* HERO */
   .hero{
     padding: 150px 6% 60px;
@@ -121,7 +121,7 @@
     transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), background 0.25s ease;
   }
   .hero-cta:hover{ transform: translateY(-3px) rotate(-2deg); background: var(--accent); }
-
+ 
   .hero-media{
     position: relative;
     display: flex;
@@ -153,7 +153,7 @@
   }
   .video-frame:hover{ transform: rotate(0deg) scale(1.02); }
   .video-frame video{ width: 100%; height: 100%; object-fit: cover; display: block; }
-
+ 
   /* TAG ROW */
   .tag-row{
     display: flex;
@@ -176,12 +176,12 @@
   .tag-row span:nth-child(odd){ transform: rotate(-2deg); }
   .tag-row span:nth-child(even){ transform: rotate(2deg); }
   .tag-row span:hover{ transform: translateY(-3px) scale(1.05); color: var(--accent); }
-
+ 
   section{ padding: 90px 6%; max-width: 1300px; margin: 0 auto; }
-
+ 
   .section-head{ text-align: center; max-width: 620px; margin: 0 auto 64px; }
   .section-head h2{ font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-top: 12px; }
-
+ 
   /* WORK */
   .work-item{
     display: grid;
@@ -206,7 +206,8 @@
   .work-item.reverse .work-media{ transform: rotate(1.5deg); }
   .work-media:hover{ transform: rotate(0deg) scale(1.015); }
   .work-media video{ width: 100%; height: 100%; object-fit: cover; display:block; }
-
+  .work-media.square{ aspect-ratio: 1/1; max-height: 460px; }
+ 
   .work-tag{
     display: inline-block;
     background: var(--accent-soft);
@@ -222,7 +223,7 @@
   .work-meta{ display: flex; gap: 30px; flex-wrap: wrap; }
   .work-meta div{ font-size: 0.78rem; color: var(--ink-dim); font-weight: 500; }
   .work-meta div b{ display:block; color: var(--ink); font-size: 0.92rem; margin-top: 4px; font-weight: 600; }
-
+ 
   /* SERVICES */
   .services-grid{
     display: grid;
@@ -241,7 +242,7 @@
   .service-card .num{ color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 20px; display:block; }
   .service-card h3{ font-size: 1.3rem; margin-bottom: 12px; }
   .service-card p{ color: var(--ink-dim); font-size: 0.94rem; line-height: 1.55; }
-
+ 
   /* CONTACT */
   .contact{ text-align: center; padding-bottom: 130px; }
   .contact h2{ font-size: clamp(2rem, 4.6vw, 3.2rem); margin: 14px auto 34px; max-width: 720px; }
@@ -258,7 +259,7 @@
     transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
   }
   .cta-btn:hover{ transform: translateY(-3px) rotate(-1.5deg); }
-
+ 
   footer{
     padding: 34px 6%;
     display: flex;
@@ -266,7 +267,7 @@
     color: var(--ink-dim);
     font-size: 0.82rem;
   }
-
+ 
   @media (max-width: 900px){
     .hero{ grid-template-columns: 1fr; padding-top: 120px; gap: 30px; }
     .hero-media{ margin-top: 10px; }
@@ -281,7 +282,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="logo">zander<em>digital</em></div>
   <div class="nav-links">
@@ -290,7 +291,7 @@
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
+ 
 <section class="hero">
   <div class="hero-text">
     <span class="eyebrow">Motion Design Studio</span>
@@ -301,11 +302,11 @@
   <div class="hero-media">
     <div class="blob"></div>
     <div class="video-frame">
-      <video muted loop playsinline autoplay src="videos/zwoo.mp4"></video>
+      <video muted loop playsinline autoplay src="videos/ginsanity.mp4"></video>
     </div>
   </div>
 </section>
-
+ 
 <div class="tag-row">
   <span>Physical Products</span>
   <span>Apps & Games</span>
@@ -315,13 +316,13 @@
   <span>Motion Design</span>
   <span>Short-Form Content</span>
 </div>
-
+ 
 <section id="work">
   <div class="section-head">
     <span class="eyebrow">Selected Work</span>
-    <h2>Two products, two completely different worlds.</h2>
+    <h2>Five products, five completely different worlds.</h2>
   </div>
-
+ 
   <div class="work-item">
     <div class="work-media">
       <video src="videos/devia.mp4" muted loop playsinline autoplay></video>
@@ -337,7 +338,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="work-item reverse">
     <div class="work-media">
       <video src="videos/zwoo.mp4" muted loop playsinline autoplay></video>
@@ -353,7 +354,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="work-item">
     <div class="work-media">
       <video src="videos/weltenbummler.mp4" muted loop playsinline autoplay></video>
@@ -369,8 +370,40 @@
       </div>
     </div>
   </div>
+ 
+  <div class="work-item reverse">
+    <div class="work-media square">
+      <video src="videos/olbrish.mp4" muted loop playsinline autoplay></video>
+    </div>
+    <div class="work-text">
+      <span class="work-tag">Olbrish — Leather Bags</span>
+      <h3>Olbrish</h3>
+      <p>A minimalist reveal for a handcrafted briefcase: the bag opens, the leather edge flexes at the seam, and a 360° hero turn shows the stitching that a product photo can't.</p>
+      <div class="work-meta">
+        <div>Style<b>Minimalist Reveal</b></div>
+        <div>Format<b>Square, 1:1</b></div>
+        <div>Market<b>DACH</b></div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="work-item">
+    <div class="work-media square">
+      <video src="videos/edelmond.mp4" muted loop playsinline autoplay></video>
+    </div>
+    <div class="work-text">
+      <span class="work-tag">Edelmond Chocolatiers</span>
+      <h3>Edelmond</h3>
+      <p>A bean-to-bar chocolate breaks in mid-air, no hands in frame — the fracture line doing the talking about how long it was conched.</p>
+      <div class="work-meta">
+        <div>Style<b>Product in Motion</b></div>
+        <div>Format<b>Square, 1:1</b></div>
+        <div>Market<b>DACH</b></div>
+      </div>
+    </div>
+  </div>
 </section>
-
+ 
 <section id="services">
   <div class="section-head">
     <span class="eyebrow">What We Do</span>
@@ -394,18 +427,18 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="contact" id="contact">
   <span class="eyebrow">Let's Talk</span>
   <h2>Have a product worth making people <em>stop</em> for?</h2>
   <a class="cta-btn" href="mailto:welcome@zanderdigital.com">welcome@zanderdigital.com →</a>
 </section>
-
+ 
 <footer>
   <div>© 2026 Zander Digital</div>
   <div>DACH · LATAM · EN</div>
 </footer>
-
+ 
 <script>
   const nav = document.querySelector('nav');
   const onScroll = () => {
@@ -422,3 +455,4 @@
 </script>
 </body>
 </html>
+ 
